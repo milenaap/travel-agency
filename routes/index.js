@@ -4,8 +4,12 @@ import {
      paginaNosotros, 
      paginaViajes,
      paginaTestimoniales,
-     paginaDetalleViaje 
-} from '../controles/paginasControler.js';
+     paginaDetalleViaje
+} from '../controles/paginasController.js';
+
+import { guardarTestimonial } from '../controles/testimonialController.js';
+
+
 
 const router = express.Router();
 
@@ -16,6 +20,8 @@ router.get('/viajes', paginaViajes);
 
 router.get('/viajes/:slug', paginaDetalleViaje);
 
-router.get('/testimoniales', paginaTestimoniales );
+router.get('/testimoniales', paginaTestimoniales);
+router.post('/testimoniales', guardarTestimonial);
+
 
 export default router;
